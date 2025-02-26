@@ -1,0 +1,33 @@
+﻿@using MvcOnlineTicariOtomasyon.Models.Siniflar;
+@model List<Cariler>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+<br />
+<table class="table table-hover">
+    <tr>
+        <th>ID</th>
+        <th>Ad</th>
+        <th>Soyad</th>
+        <th>Şehir</th>
+        <th>Mail</th>
+        <th>Sil</th>
+        <th>Güncelle</th>
+        <th>Detaylar</th>
+    </tr>
+    @foreach(var x in Model)
+            {
+                <tr>
+                    <td>@x.CariID</td>
+                    <td>@x.CariAd</td>
+                    <td>@x.CariSoyad</td>
+                    <td>@x.CariSehir</td>
+                    <td>@x.CariMail</td>
+                    <td><a href="#" class="btn btn-outline-danger">Sil</a></td>
+                    <td><a href="#" class="btn btn-outline-warning">Güncelle</a></td>
+                    <td><a href="#" class="btn btn-outline-info">Detaylar</a></td>
+                </tr>
+            }
+</table>
+<a href="/Cari/CariEkle" class="btn btn-info">Cari Ekle</a>
