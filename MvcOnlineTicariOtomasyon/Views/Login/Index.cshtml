@@ -123,11 +123,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     <h3>Personel Giriş Formu</h3>
                     <div class="clear"></div>
                     <div class="login-agileits-top">
-                        <form action="#" method="post">
+                        @using (Html.BeginForm("AdminLogin", "Login", FormMethod.Post))
+                        {
                             <input type="text" class="name" name="KullaniciAd" Placeholder="Kullanıcı Adı" required="" />
                             <input type="password" class="password" name="Sifre" Placeholder="Şifre" required="" />
                             <input type="submit" value="Giriş Yap!">
-                        </form>
+                        }
                     </div>
                 </div>
             </div>
@@ -139,7 +140,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <div class="pop-up">
         <div id="small-dialog2" class="mfp-hide book-form">
 
-            @Html.Action("Partial1","Login")
+            @Html.Action("Partial1", "Login")
 
         </div>
     </div>
@@ -150,20 +151,20 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <!--popup-js-->
     <script src="~/MvcOnlineTicariOtomasyon/weblogin/js/jquery.magnific-popup.js" type="text/javascript"></script>
     <script>
-	$(document).ready(function() {
-	$('.popup-with-zoom-anim').magnificPopup({
-		type: 'inline',
-		fixedContentPos: false,
-		fixedBgPos: true,
-		overflowY: 'auto',
-		closeBtnInside: true,
-		preloader: false,
-		midClick: true,
-		removalDelay: 300,
-		mainClass: 'my-mfp-zoom-in'
-	});
+        $(document).ready(function () {
+            $('.popup-with-zoom-anim').magnificPopup({
+                type: 'inline',
+                fixedContentPos: false,
+                fixedBgPos: true,
+                overflowY: 'auto',
+                closeBtnInside: true,
+                preloader: false,
+                midClick: true,
+                removalDelay: 300,
+                mainClass: 'my-mfp-zoom-in'
+            });
 
-	});
+        });
     </script>
     <!--//popup-js-->
 

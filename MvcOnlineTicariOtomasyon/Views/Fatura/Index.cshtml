@@ -7,32 +7,26 @@
 
 <table class="table table-hover" style="margin-top:20px">
     <tr>
-        <th>ID</th>
-        <th>Seri No</th>
-        <th>Sıra No</th>
-        <th>Vergi Dairesi</th>
+        <th>Seri-Sira No</th>
         <th>Tarih</th>
         <th>Saat</th>
-        <th>Teslim Eden</th>
-        <th>Teslim Alan</th>
         <th>Toplam</th>
         <th>Güncelle</th>
         <th>Detaylar</th>
+        <th>Liste</th>
+        <th>Yeni Kalem</th>
     </tr>
     @foreach (var k in Model)
     {
         <tr>
-            <td>@k.FaturaID</td>
-            <td>@k.FaturaSeriNo</td>
-            <td>@k.FaturaSiraNo</td>
-            <td>@k.VergiDairesi</td>
+            <td>@k.FaturaSeriNo @k.FaturaSiraNo</td>
             <td>@k.FaturaTarih</td>
             <td>@k.Saat</td>
-            <td>@k.TeslimEden</td>
-            <td>@k.TeslimAlan</td>
-            <td>@k.Toplam</td>
-            <td><a href="/Fatura/FaturaGetir/@k.FaturaID" class="btn btn-outline-success">Güncelle</a></td>
-            <td><a href="/Fatura/FaturaDetay/@k.FaturaID" class="btn btn-outline-info">Detaylar</a></td>
+            <td>@k.Toplam ₺</td>
+            <td><a href="/Fatura/FaturaGetir/@k.FaturaID" class="btn btn-outline-warning">Güncelle</a></td>
+            <td><a href="/Fatura/FaturaDetay/@k.FaturaID" class="btn btn-outline-danger">Detaylar</a></td>
+            <td><a href="/Fatura/FaturaDetay/@k.FaturaID" class="btn btn-outline-info">Liste</a></td>
+            <td><a href="/Fatura/FaturaDetay/@k.FaturaID" class="btn btn-outline-success">Yeni Kalem</a></td>
         </tr>
     }
 </table>
