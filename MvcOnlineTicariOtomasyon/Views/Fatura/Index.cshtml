@@ -5,15 +5,17 @@
     Layout = "~/Views/Shared/AdminLayout.cshtml";
 }
 
-<table class="table table-hover" style="margin-top:20px">
-    <tr>
-        <th>Seri-Sira No</th>
-        <th>Tarih</th>
-        <th>Saat</th>
-        <th>Toplam</th>
-        <th>Güncelle</th>
-        <th>Detaylar</th>
-    </tr>
+<table id="tbl1" class="table table-hover" style="margin-top:20px">
+    <thead>
+        <tr>
+            <th>Seri-Sira No</th>
+            <th>Tarih</th>
+            <th>Saat</th>
+            <th>Toplam</th>
+            <th>Güncelle</th>
+            <th>Detaylar</th>
+        </tr>
+    </thead>
     @foreach (var k in Model)
     {
         <tr>
@@ -58,3 +60,14 @@
             </div>
         </div>
     </div>*@
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+<link href="https://cdn.datatables.net/1.10.15/css/dataTables.bootstrap.min.css" rel="stylesheet" />
+<link href="https://cdn.datatables.net/responsive/2.1.1/css/responsive.bootstrap.min.css" rel="stylesheet" />
+<script src="https://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.15/js/dataTables.bootstrap4.min.js "></script>
+
+<script>
+    $('#tbl1').dataTable({});
+</script>

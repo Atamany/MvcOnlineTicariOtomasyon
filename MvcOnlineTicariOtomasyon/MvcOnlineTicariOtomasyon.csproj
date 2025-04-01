@@ -141,6 +141,7 @@
     <Compile Include="Controllers\GaleriController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\IstatistikController.cs" />
+    <Compile Include="Controllers\KargoController.cs" />
     <Compile Include="Controllers\KategoriController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\PersonelController.cs" />
@@ -179,6 +180,10 @@
     <Compile Include="Migrations\202503102004514_mig7.Designer.cs">
       <DependentUpon>202503102004514_mig7.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202504011919028_kargotest.cs" />
+    <Compile Include="Migrations\202504011919028_kargotest.Designer.cs">
+      <DependentUpon>202504011919028_kargotest.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Siniflar\Admin.cs" />
     <Compile Include="Models\Siniflar\Cariler.cs" />
@@ -187,6 +192,8 @@
     <Compile Include="Models\Siniflar\Fatura.cs" />
     <Compile Include="Models\Siniflar\FaturaKalem.cs" />
     <Compile Include="Models\Siniflar\Gider.cs" />
+    <Compile Include="Models\Siniflar\KargoDetay.cs" />
+    <Compile Include="Models\Siniflar\KargoTakip.cs" />
     <Compile Include="Models\Siniflar\Kategori.cs" />
     <Compile Include="Models\Siniflar\Personel.cs" />
     <Compile Include="Models\Siniflar\SatisHareket.cs" />
@@ -2962,6 +2969,10 @@
     <Content Include="Views\Personel\PersonelListesi.cshtml" />
     <Content Include="Views\Satis\SatisListesi.cshtml" />
     <Content Include="Views\Istatistik\Partial5.cshtml" />
+    <Content Include="Views\Kargo\Index.cshtml" />
+    <Content Include="Views\Kargo\KargoListesi.cshtml" />
+    <Content Include="Views\Kargo\YeniKargo.cshtml" />
+    <Content Include="Views\Kargo\KargoDetay.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -3025,6 +3036,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202503102004514_mig7.resx">
       <DependentUpon>202503102004514_mig7.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202504011919028_kargotest.resx">
+      <DependentUpon>202504011919028_kargotest.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

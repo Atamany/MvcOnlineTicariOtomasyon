@@ -1,0 +1,35 @@
+﻿@model MvcOnlineTicariOtomasyon.Models.Siniflar.KargoDetay
+
+@{
+    ViewBag.Title = "YeniKargo";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<script src="~/Scripts/jquery-3.7.0.js"></script>
+<br />
+<h2>Kargo Gönderme Sayfası</h2>
+<br />
+<form class="form-group" method="post">
+    @Html.LabelFor(x => x.UrunID)
+    @Html.TextBoxFor(x => x.UrunID, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.TakipKodu)
+    <input type="text" name="TakipKodu" value="@ViewBag.TakipKod" class="form-control" readonly/>
+    <br />
+    @Html.LabelFor(x => x.PersonelID)
+    @Html.DropDownListFor(x => x.PersonelID, (List<SelectListItem>)ViewBag.dgr3, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.CariID)
+    @Html.TextBoxFor(x => x.CariID, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.Tarih)
+    @Html.TextBoxFor(x => x.Tarih, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-primary" id="Btn1">Kaydet</button>
+</form>
+
+<script>
+    $('#Btn1').click(function () {
+        alert("Kargo Gönderisi başarılı bir şekilde eklendi!");
+    });
+</script>

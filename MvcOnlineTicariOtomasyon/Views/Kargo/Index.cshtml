@@ -1,0 +1,44 @@
+﻿@using MvcOnlineTicariOtomasyon.Models.Siniflar
+@model List<KargoDetay>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<table id="tbl1" class="table table-hover" style="margin-top:20px">
+    <thead>
+        <tr>
+            <th>Takip Kodu</th>
+            <th>Personel</th>
+            <th>Alıcı</th>
+            <th>Tarih</th>
+            <th>Detaylar</th>
+        </tr>
+    </thead>
+    @foreach (var k in Model)
+    {
+        <tr>
+            <td>@k.TakipKodu</td>
+            <td>@k.Personels.PersonelAd @k.Personels.PersonelSoyad</td>
+            <td>@k.Carilers.CariAd @k.Carilers.CariSoyad</td>
+            <td>@Convert.ToDateTime(k.Tarih).ToString("dd/MM/yyyy")</td>
+            <td><a href="/Kargo/KargoDetay/@k.TakipKodu" class="btn btn-outline-info">Detaylar</a></td>
+        </tr>
+    }
+</table>
+<a href="/Kargo/YeniKargo" class="btn btn-info">Kargo Gönder</a>
+
+<a href="/Kargo/KargoListesi" class="btn btn-warning"> PDF ~ Excel</a>
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+<link href="https://cdn.datatables.net/1.10.15/css/dataTables.bootstrap.min.css" rel="stylesheet" />
+<link href="https://cdn.datatables.net/responsive/2.1.1/css/responsive.bootstrap.min.css" rel="stylesheet" />
+<script src="https://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.15/js/dataTables.bootstrap4.min.js "></script>
+
+<script>
+    $('#tbl1').dataTable({});
+</script>
+
+
