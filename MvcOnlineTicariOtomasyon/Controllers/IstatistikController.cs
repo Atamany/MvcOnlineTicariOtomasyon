@@ -89,7 +89,7 @@ namespace MvcOnlineTicariOtomasyon.Controllers
                             Sehir = g.Key,
                             Sayi = g.Count()
                         };
-            return View(sorgu.ToList());
+            return View(sorgu.Take(5).ToList());
         }
         public PartialViewResult Partial1()
         {
@@ -101,16 +101,16 @@ namespace MvcOnlineTicariOtomasyon.Controllers
                              Departman = g.Key,
                              Sayi = g.Count()
                          };
-            return PartialView(sorgu2.ToList());
+            return PartialView(sorgu2.Take(5).ToList());
         }
         public PartialViewResult Partial2()
         {
-            var sorgu3 = db.Carilers.ToList();
+            var sorgu3 = db.Carilers.Take(5).ToList();
             return PartialView(sorgu3);
         }
         public PartialViewResult Partial3()
         {
-            var sorgu4 = db.Uruns.ToList();
+            var sorgu4 = db.Uruns.Take(5).ToList();
             return PartialView(sorgu4);
         }
         public PartialViewResult Partial4()
@@ -123,7 +123,19 @@ namespace MvcOnlineTicariOtomasyon.Controllers
                              Marka = g.Key,
                              Sayi = g.Count()
                          };
-            return PartialView(sorgu5.ToList());
+            return PartialView(sorgu5.Take(5).ToList());
+        }
+        public PartialViewResult Partial5()
+        {
+            var sorgu6 = from x in db.Uruns
+                         group x by x.Kategori.KategoriAd into g
+                         orderby g.Count() descending
+                         select new SinifGrup4
+                         {
+                             Kategori = g.Key,
+                             Sayi = g.Count()
+                         };
+            return PartialView(sorgu6.Take(5).ToList());
         }
     }
 }

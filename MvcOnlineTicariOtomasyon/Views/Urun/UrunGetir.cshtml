@@ -30,6 +30,9 @@
     @Html.LabelFor(x => x.UrunGorsel)
     @Html.TextBoxFor(x => x.UrunGorsel, new { @class = "form-control" })
     <br />
+    @Html.LabelFor(x => x.UrunBilgi)
+    @Html.TextAreaFor(x => x.UrunBilgi, new { @class = "form-control" })
+    <br />
     <button class="btn btn-warning">Güncelle</button>
 }
 

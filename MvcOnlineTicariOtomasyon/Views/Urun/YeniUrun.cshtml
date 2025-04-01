@@ -3,6 +3,7 @@
     ViewBag.Title = "YeniUrun";
     Layout = "~/Views/Shared/AdminLayout.cshtml";
 }
+<script src="~/Scripts/jquery-3.7.0.js"></script>
 <br />
 <h2>Yeni Ürün Sayfası</h2>
 <br />
@@ -29,6 +30,13 @@
     @Html.LabelFor(x => x.UrunGorsel)
     @Html.TextBoxFor(x => x.UrunGorsel, new { @class = "form-control" })
     <br />
-    <button class="btn btn-primary">Kaydet</button>
+    @Html.LabelFor(x => x.UrunBilgi)
+    @Html.TextAreaFor(x => x.UrunBilgi, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-primary" id="Btn1">Kaydet</button>
 </form>
-
+<script>
+    $('#Btn1').click(function () {
+        alert("Kategori başarılı bir şekilde eklendi!");
+    });
+</script>

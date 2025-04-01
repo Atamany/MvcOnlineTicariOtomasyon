@@ -8,19 +8,20 @@
 <h2>Departman Detay Sayfası</h2>
 <br />
 <ol class="breadcrumb mb-4"><li class="breadcrumb-item active"><h5>Departman: @ViewBag.d</h5></li></ol>
-    <table class="table table-hover" style="margin-top:20px">
+<table class="table table-hover" style="margin-top:20px">
+    <tr>
+        <th>Personel</th>
+        <th>Satışlar</th>
+    </tr>
+    @foreach (var k in Model)
+    {
         <tr>
-            <th>Personel</th>
-            <th>Satışlar</th>
+            <td>@k.PersonelAd @k.PersonelSoyad</td>
+            <td><a href="/Departman/DepartmanPersonelSatis/@k.PersonelID" class="btn btn-default" style="background-color:darkorange">Satışlar</a></td>
         </tr>
-        @foreach (var k in Model)
-        {
-            <tr>
-                <td>@k.PersonelAd @k.PersonelSoyad</td>
-                <td><a href="/Departman/DepartmanPersonelSatis/@k.PersonelID" class="btn btn-default" style="background-color:darkorange">Satışlar</a></td>
-            </tr>
-        }
-    </table>
+    }
+</table>
+
 
 
 

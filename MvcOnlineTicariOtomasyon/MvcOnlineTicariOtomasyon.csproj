@@ -193,6 +193,7 @@
     <Compile Include="Models\Siniflar\SinifGrup.cs" />
     <Compile Include="Models\Siniflar\SinifGrup2.cs" />
     <Compile Include="Models\Siniflar\SinifGrup3.cs" />
+    <Compile Include="Models\Siniflar\SinifGrup4.cs" />
     <Compile Include="Models\Siniflar\Urun.cs" />
     <Compile Include="Models\Siniflar\Yapilacak.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -2960,6 +2961,7 @@
     <Content Include="Views\Kategori\KategoriListesi.cshtml" />
     <Content Include="Views\Personel\PersonelListesi.cshtml" />
     <Content Include="Views\Satis\SatisListesi.cshtml" />
+    <Content Include="Views\Istatistik\Partial5.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

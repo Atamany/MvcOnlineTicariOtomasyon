@@ -68,6 +68,7 @@ namespace MvcOnlineTicariOtomasyon.Controllers
             urn.Stok = p.Stok;
             urn.KategoriID = p.KategoriID;
             urn.UrunGorsel = p.UrunGorsel;
+            urn.UrunBilgi = p.UrunBilgi;
             db.SaveChanges();
             return RedirectToAction("Index");
         }

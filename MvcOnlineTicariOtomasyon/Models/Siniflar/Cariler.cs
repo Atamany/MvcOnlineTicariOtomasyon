@@ -32,5 +32,6 @@ namespace MvcOnlineTicariOtomasyon.Models.Siniflar
         public string CariSifre { get; set; }
         public bool Durum { get; set; }
         public ICollection<SatisHareket> SatisHarekets { get; set; }
+        public ICollection<Fatura> Faturalars { get; set; }
     }
 }

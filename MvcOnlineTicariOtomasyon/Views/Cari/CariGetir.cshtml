@@ -26,6 +26,9 @@
         @Html.TextBoxFor(x => x.CariMail, new { @class = "form-control" })
         @Html.ValidationMessageFor(x => x.CariMail, "", new { @class = "text-danger" })
         <br />
+        @Html.LabelFor(x => x.CariSifre)
+        @Html.TextBoxFor(x => x.CariSifre, new { @class = "form-control" })
+        <br />
         <button class="btn btn-warning">Güncelle</button>
     </div>
 }

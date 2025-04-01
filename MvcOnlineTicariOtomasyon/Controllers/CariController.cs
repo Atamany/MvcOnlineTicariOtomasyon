@@ -51,6 +51,7 @@ namespace MvcOnlineTicariOtomasyon.Controllers
             cari.CariSoyad = p.CariSoyad;
             cari.CariSehir = p.CariSehir;
             cari.CariMail = p.CariMail;
+            cari.CariSifre = p.CariSifre;
             db.SaveChanges();
             return RedirectToAction("Index");
         }

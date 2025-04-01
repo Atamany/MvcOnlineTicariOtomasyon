@@ -18,6 +18,13 @@ namespace MvcOnlineTicariOtomasyon.Controllers
         [HttpGet]
         public ActionResult FaturaEkle()
         {
+            List<SelectListItem> deger3 = (from x in db.Personels.Where(x => x.DepartmanID == 1).ToList()
+                                           select new SelectListItem
+                                           {
+                                               Text = x.PersonelAd + " " + x.PersonelSoyad,
+                                               Value = x.PersonelID.ToString()
+                                           }).ToList();
+            ViewBag.dgr3 = deger3;
             return View();
         }
         [HttpPost]
@@ -40,8 +47,8 @@ namespace MvcOnlineTicariOtomasyon.Controllers
             ftr.VergiDairesi = fatura.VergiDairesi;
             ftr.FaturaTarih = fatura.FaturaTarih;
             ftr.Saat = fatura.Saat;
-            ftr.TeslimEden = fatura.TeslimEden;
-            ftr.TeslimAlan = fatura.TeslimAlan;
+            ftr.PersonelID = fatura.PersonelID;
+            ftr.CariID = fatura.CariID;
             db.SaveChanges();
             return RedirectToAction("Index");
         }

@@ -30,5 +30,6 @@ namespace MvcOnlineTicariOtomasyon.Models.Siniflar
         public string UrunBilgi { get; set; }
         public virtual Kategori Kategori { get; set; }
         public ICollection<SatisHareket> SatisHarekets { get; set; }
+        public ICollection<FaturaKalem> FaturaKalems { get; set; }
     }
 }
