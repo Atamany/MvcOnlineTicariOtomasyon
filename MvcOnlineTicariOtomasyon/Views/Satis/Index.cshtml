@@ -24,13 +24,13 @@
     {
         <tr>
             <td>@k.SatisID</td>
-            <td>@k.Urun.UrunAd</td>
+            <td>@k.Urun.Marka @k.Urun.UrunAd</td>
             <td>@k.Cariler.CariAd @k.Cariler.CariSoyad</td>
             <td>@k.Personel.PersonelAd @k.Personel.PersonelSoyad</td>
             <td>@k.Adet</td>
             <td>@k.Fiyat</td>
             <td>@k.ToplamTutar</td>
-            <td>@k.Tarih</td>
+            <td>@Convert.ToDateTime(k.Tarih).ToString("dd/MM/yyyy")</td>
             <td><a href="/Satis/SatisGetir/@k.SatisID" class="btn btn-outline-success">Güncelle</a></td>
             <td><a href="/Satis/SatisDetay/@k.SatisID" class="btn btn-outline-info">Detaylar</a></td>
         </tr>
@@ -38,7 +38,7 @@
 </table>
 <a href="/Satis/YeniSatis" class="btn btn-info">Satış Ekle</a>
 
-<link href="~/Content/bootstrap.css" rel="stylesheet" />
+@*<link href="~/Content/bootstrap.css" rel="stylesheet" />*@
 
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 

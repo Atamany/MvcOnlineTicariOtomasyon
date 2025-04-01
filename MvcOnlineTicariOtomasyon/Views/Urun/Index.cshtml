@@ -22,6 +22,7 @@
         <th>Kategori</th>
         <th>Sil</th>
         <th>Güncelle</th>
+        <th>Satış Yap!</th>
     </tr>
     @foreach (var k in Model)
     {
@@ -34,6 +35,7 @@
             <td>@k.Kategori.KategoriAd</td>
             <td><a href="/Urun/UrunSil/@k.UrunID" class="btn btn-outline-danger">Sil</a></td>
             <td><a href="/Urun/UrunGetir/@k.UrunID" class="btn btn-outline-success">Güncelle</a></td>
+            <td><a href="/Urun/SatisYap/@k.UrunID" class="btn btn-outline-info">Satış Yap!</a></td>
         </tr>
     }
 </table>

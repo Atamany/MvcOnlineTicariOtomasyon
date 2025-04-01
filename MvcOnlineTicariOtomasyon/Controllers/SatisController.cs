@@ -21,7 +21,7 @@ namespace MvcOnlineTicariOtomasyon.Controllers
             List<SelectListItem> deger1 = (from x in db.Uruns.ToList()
                                            select new SelectListItem
                                            {
-                                               Text = x.UrunAd,
+                                               Text = x.Marka + " " + x.UrunAd,
                                                Value = x.UrunID.ToString()
                                            }).ToList();
             List<SelectListItem> deger2 = (from x in db.Carilers.ToList()
@@ -30,7 +30,7 @@ namespace MvcOnlineTicariOtomasyon.Controllers
                                                Text = x.CariAd + " " + x.CariSoyad,
                                                Value = x.CariID.ToString()
                                            }).ToList();
-            List<SelectListItem> deger3 = (from x in db.Personels.ToList()
+            List<SelectListItem> deger3 = (from x in db.Personels.Where(x => x.DepartmanID == 1).ToList()
                                            select new SelectListItem
                                            {
                                                Text = x.PersonelAd + " " + x.PersonelSoyad,
@@ -54,7 +54,7 @@ namespace MvcOnlineTicariOtomasyon.Controllers
             List<SelectListItem> deger1 = (from x in db.Uruns.ToList()
                                            select new SelectListItem
                                            {
-                                               Text = x.UrunAd,
+                                               Text = x.Marka + " " + x.UrunAd,
                                                Value = x.UrunID.ToString()
                                            }).ToList();
             List<SelectListItem> deger2 = (from x in db.Carilers.ToList()
@@ -63,7 +63,7 @@ namespace MvcOnlineTicariOtomasyon.Controllers
                                                Text = x.CariAd + " " + x.CariSoyad,
                                                Value = x.CariID.ToString()
                                            }).ToList();
-            List<SelectListItem> deger3 = (from x in db.Personels.ToList()
+            List<SelectListItem> deger3 = (from x in db.Personels.Where(x => x.DepartmanID == 1).ToList()
                                            select new SelectListItem
                                            {
                                                Text = x.PersonelAd + " " + x.PersonelSoyad,
