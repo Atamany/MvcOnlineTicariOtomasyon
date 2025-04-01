@@ -182,10 +182,8 @@
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Siniflar\Admin.cs" />
     <Compile Include="Models\Siniflar\Cariler.cs" />
-    <Compile Include="Models\Siniflar\Class1.cs" />
     <Compile Include="Models\Siniflar\Context.cs" />
     <Compile Include="Models\Siniflar\Departman.cs" />
-    <Compile Include="Models\Siniflar\Detay.cs" />
     <Compile Include="Models\Siniflar\Fatura.cs" />
     <Compile Include="Models\Siniflar\FaturaKalem.cs" />
     <Compile Include="Models\Siniflar\Gider.cs" />
@@ -2956,6 +2954,12 @@
     <Content Include="Views\CariPanel\Index.cshtml" />
     <Content Include="Views\CariPanel\Siparislerim.cshtml" />
     <Content Include="Views\Urun\SatisYap.cshtml" />
+    <Content Include="Views\Cari\CariListesi.cshtml" />
+    <Content Include="Views\Departman\DepartmanListesi.cshtml" />
+    <Content Include="Views\Fatura\FaturaListesi.cshtml" />
+    <Content Include="Views\Kategori\KategoriListesi.cshtml" />
+    <Content Include="Views\Personel\PersonelListesi.cshtml" />
+    <Content Include="Views\Satis\SatisListesi.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

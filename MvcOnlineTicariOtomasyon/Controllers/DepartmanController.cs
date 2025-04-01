@@ -61,5 +61,10 @@ namespace MvcOnlineTicariOtomasyon.Controllers
             ViewBag.dpers = per;
             return View(degerler);
         }
+        public ActionResult DepartmanListesi()
+        {
+            var degerler = db.Departmans.ToList();
+            return View(degerler);
+        }
     }
 }

@@ -61,5 +61,10 @@ namespace MvcOnlineTicariOtomasyon.Controllers
             ViewBag.cari = cr;
             return View(degerler);
         }
+        public ActionResult CariListesi()
+        {
+            var degerler = db.Carilers.ToList();
+            return View(degerler);
+        }
     }
 }

@@ -78,5 +78,10 @@ namespace MvcOnlineTicariOtomasyon.Controllers
             var sorgu = db.Personels.ToList();
             return View(sorgu);
         }
+        public ActionResult PersonelListesi()
+        {
+            var degerler = db.Personels.ToList();
+            return View(degerler);
+        }
     }
 }

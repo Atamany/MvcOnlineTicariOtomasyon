@@ -13,7 +13,6 @@
         <th>Toplam</th>
         <th>Güncelle</th>
         <th>Detaylar</th>
-        <th>Liste</th>
         <th>Yeni Kalem</th>
     </tr>
     @foreach (var k in Model)
@@ -30,6 +29,7 @@
     }
 </table>
 <a href="/Fatura/FaturaEkle" class="btn btn-primary">Fatura Ekle</a>
+<a href="/Fatura/FaturaListesi" class="btn btn-warning"> PDF ~ Excel</a>
 <button type="button" class="btn btn-warning" style="background-color: #ff006e" data-toggle="modal" data-target="#Modal1">Popup Penceresi</button>
 <div class="modal" id="Modal1">
     <div class="modal-dialog">

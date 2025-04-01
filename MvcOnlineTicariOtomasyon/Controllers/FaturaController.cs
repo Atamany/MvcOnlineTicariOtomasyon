@@ -64,5 +64,10 @@ namespace MvcOnlineTicariOtomasyon.Controllers
             db.SaveChanges();
             return RedirectToAction("Index");
         }
+        public ActionResult FaturaListesi()
+        {
+            var degerler = db.Faturas.ToList();
+            return View(degerler);
+        }
     }
 }

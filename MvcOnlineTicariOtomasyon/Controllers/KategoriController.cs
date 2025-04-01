@@ -50,5 +50,10 @@ namespace MvcOnlineTicariOtomasyon.Controllers
             db.SaveChanges();
             return RedirectToAction("Index");
         }
+        public ActionResult KategoriListesi()
+        {
+            var degerler = db.Kategoris.ToList();
+            return View(degerler);
+        }
     }
 }

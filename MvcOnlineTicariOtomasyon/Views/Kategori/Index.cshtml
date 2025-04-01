@@ -15,13 +15,14 @@
     </tr>
     @foreach (var k in Model)
     {
-    <tr>
-        <td>@k.KategoriAd</td>
-        <td><a href="/Kategori/KategoriSil/@k.KategoriID" class="btn btn-outline-danger">Sil</a></td>
-        <td><a href="/Kategori/KategoriGetir/@k.KategoriID" class="btn btn-outline-success">Güncelle</a></td>
-    </tr>
+        <tr>
+            <td>@k.KategoriAd</td>
+            <td><a href="/Kategori/KategoriSil/@k.KategoriID" class="btn btn-outline-danger">Sil</a></td>
+            <td><a href="/Kategori/KategoriGetir/@k.KategoriID" class="btn btn-outline-success">Güncelle</a></td>
+        </tr>
     }
 </table>
 @Html.PagedListPager((IPagedList)Model, sayfa => Url.Action("Index", new { sayfa }))
 <a href="/Kategori/KategoriEkle" class="btn btn-primary">Kategori Ekle</a>
+<a href="/Kategori/KategoriListesi" class="btn btn-warning"> PDF ~ Excel</a>
 

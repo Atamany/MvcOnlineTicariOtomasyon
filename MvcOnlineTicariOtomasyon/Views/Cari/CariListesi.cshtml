@@ -1,5 +1,5 @@
 ﻿@using MvcOnlineTicariOtomasyon.Models.Siniflar
-@model List<Urun>
+@model List<Cariler>
 @{
     Layout = null;
 }
@@ -9,7 +9,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Ürün Listesi</title>
+    <title>Cari Listesi</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.1/css/bootstrap.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/buttons/1.5.2/css/buttons.bootstrap4.min.css">
@@ -19,28 +19,22 @@
     <table id="example" class="table table-striped table-bordered dt-responsive nowrap" style="width:100%">
         <thead>
             <tr>
-                <th>Ürün Id</th>
-                <th>Adı</th>
-                <th>Marka</th>
-                <th>Stok</th>
-                <th>Alış Fiyat</th>
-                <th>Satış Fiyat</th>
-                <th>Durum</th>
-                <th>Kategori</th>
+                <th>ID</th>
+                <th>Ad</th>
+                <th>Soyad</th>
+                <th>Şehir</th>
+                <th>Mail</th>
             </tr>
         </thead>
         <tbody>
             @foreach (var x in Model)
             {
                 <tr>
-                    <td>@x.UrunID</td>
-                    <td>@x.UrunAd</td>
-                    <td>@x.Marka</td>
-                    <td>@x.Stok</td>
-                    <td>@x.AlisFiyat</td>
-                    <td>@x.SatisFiyat</td>
-                    <td>@x.Durum</td>
-                    <td>@x.Kategori.KategoriAd</td>
+                    <td>@x.CariID</td>
+                    <td>@x.CariAd</td>
+                    <td>@x.CariSoyad</td>
+                    <td>@x.CariSehir</td>
+                    <td>@x.CariMail</td>
                 </tr>
             }
         </tbody>
