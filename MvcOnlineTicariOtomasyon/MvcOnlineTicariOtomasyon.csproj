@@ -2325,7 +2325,9 @@
     <Content Include="MvcOnlineTicariOtomasyon\weblogin\css\popup-box.css" />
     <Content Include="MvcOnlineTicariOtomasyon\weblogin\css\style.css" />
     <Content Include="MvcOnlineTicariOtomasyon\weblogin\fonts\fontawesome-webfont.svg" />
-    <Content Include="MvcOnlineTicariOtomasyon\weblogin\images\bg.jpg" />
+    <Content Include="MvcOnlineTicariOtomasyon\weblogin\images\Wallpaper.jpg" />
+    <Content Include="MvcOnlineTicariOtomasyon\weblogin\images\Wallpaper3.jpg" />
+    <Content Include="MvcOnlineTicariOtomasyon\weblogin\images\Wallpaper4.jpeg" />
     <Content Include="MvcOnlineTicariOtomasyon\weblogin\index.html" />
     <Content Include="MvcOnlineTicariOtomasyon\weblogin\js\jquery-2.1.4.min.js" />
     <Content Include="MvcOnlineTicariOtomasyon\weblogin\js\jquery.magnific-popup.js" />

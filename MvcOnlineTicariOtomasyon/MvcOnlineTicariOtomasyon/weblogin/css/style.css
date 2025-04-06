@@ -120,10 +120,12 @@ a:focus, a:hover {
 	outline: none;
 }
 body {
-    padding: 3em 0;
-    background: url(../images/bg.jpg); 
-	background-attachment:fixed;
-	background-size:cover;
+	padding: 0 !important;
+	margin: 0 !important;
+	background: url(../images/Wallpaper4.jpeg) no-repeat center center fixed !important;
+	background-size: 100% 100% !important;
+	min-height: 100vh !important;
+	width: 100% !important;
 }
 p{
 	font-family: 'Open Sans', sans-serif;
@@ -456,12 +458,17 @@ input[type="text"] {
 /*-- //contact --*/
 /*-- copyright --*/
 .agile-copyright {
-    color: #fff;
-    text-align: center;
-    font-size: 15px;
-    margin: 2em 0 0;
-    letter-spacing: 2px;
-    font-family: 'Raleway', sans-serif;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	text-align: center;
+	padding: 20px 0;
+	color: #fff;
+	font-size: 15px;
+	margin: 2em 0 0;
+	letter-spacing: 2px;
+	font-family: 'Raleway', sans-serif;
 }
 .agile-copyright a:hover{
     color: #db3552;
