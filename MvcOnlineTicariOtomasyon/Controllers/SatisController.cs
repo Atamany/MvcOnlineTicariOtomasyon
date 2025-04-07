@@ -46,6 +46,11 @@ namespace MvcOnlineTicariOtomasyon.Controllers
         {
             s.Tarih = DateTime.Parse(DateTime.Now.ToShortDateString());
             db.SatisHarekets.Add(s);
+            var urun = db.Uruns.FirstOrDefault(u => u.UrunID == s.UrunID);
+            if (urun != null)
+            {
+                urun.Stok -= (short)s.Adet;
+            }
             db.SaveChanges();
             return RedirectToAction("Index");
         }

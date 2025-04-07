@@ -68,6 +68,11 @@ namespace MvcOnlineTicariOtomasyon.Controllers
         public ActionResult YeniKalem(FaturaKalem faturaKalem)
         {
             db.FaturaKalems.Add(faturaKalem);
+            var fatura = db.Faturas.FirstOrDefault(f => f.FaturaID == faturaKalem.FaturaID);
+            if (fatura != null)
+            {
+                fatura.Toplam += faturaKalem.Tutar;
+            }
             db.SaveChanges();
             return RedirectToAction("Index");
         }

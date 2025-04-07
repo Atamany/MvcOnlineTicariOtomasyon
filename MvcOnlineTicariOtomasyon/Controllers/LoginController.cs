@@ -40,6 +40,7 @@ namespace MvcOnlineTicariOtomasyon.Controllers
             {
                 FormsAuthentication.SetAuthCookie(bilgiler.CariMail, false);
                 Session["CariMail"] = bilgiler.CariMail.ToString();
+                Session["CariID"] = bilgiler.CariID.ToString();
                 return RedirectToAction("Index", "CariPanel");
             }
             else
