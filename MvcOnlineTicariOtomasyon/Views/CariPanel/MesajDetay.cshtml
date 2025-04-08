@@ -1,5 +1,4 @@
-﻿@using MvcOnlineTicariOtomasyon.Models.Siniflar
-@model List<Mesajlar>
+﻿@model MvcOnlineTicariOtomasyon.Models.Siniflar.Mesajlar
 @{
     ViewBag.Title = "GelenKutusu";
     Layout = "~/Views/Shared/_CariLayout.cshtml";
@@ -95,90 +94,23 @@
             <div class="col-md-9">
                 <div class="card card-primary card-outline">
                     <div class="card-header">
-                        <h3 class="card-title">Gelen Kutusu</h3>
+                        <h3 class="card-title">Mesaj Detayları</h3>
                         <div class="card-tools">
-                            <div class="input-group input-group-sm">
-                                <input type="text" class="form-control" placeholder="Mesaj Ara">
-                                <div class="input-group-append">
-                                    <div class="btn btn-primary">
-                                        <i class="fas fa-search"></i>
-                                    </div>
-                                </div>
-                            </div>
+                            <a href="#" class="btn btn-tool" data-toggle="tooltip" title="Previous"><i class="fas fa-chevron-left"></i></a>
+                            <a href="#" class="btn btn-tool" data-toggle="tooltip" title="Next"><i class="fas fa-chevron-right"></i></a>
                         </div>
                     </div>
                     <div class="card-body p-0">
-                        <div class="mailbox-controls">
-                            <button type="button" class="btn btn-default btn-sm checkbox-toggle">
-                                <i class="far fa-square"></i>
-                            </button>
-                            <div class="btn-group">
-                                <button type="button" class="btn btn-default btn-sm"><i class="far fa-trash-alt"></i></button>
-                                <button type="button" class="btn btn-default btn-sm"><i class="fas fa-reply"></i></button>
-                                <button type="button" class="btn btn-default btn-sm"><i class="fas fa-share"></i></button>
-                            </div>
-                            <button type="button" class="btn btn-default btn-sm"><i class="fas fa-sync-alt"></i></button>
-                            <div class="float-right">
-                                1-50/200
-                                <div class="btn-group">
-                                    <button type="button" class="btn btn-default btn-sm"><i class="fas fa-chevron-left"></i></button>
-                                    <button type="button" class="btn btn-default btn-sm"><i class="fas fa-chevron-right"></i></button>
-                                </div>
-                            </div>
+                        <div class="mailbox-read-info">
+                            <h5>Konu: @Model.Konu</h5>
+                            <h6>
+                                Gönderen: @Model.Gonderici<br />
+                                Alıcı: @Model.Alici<br />
+                                <span class="mailbox-read-time float-right">Tarih: @Model.Tarih</span>
+                            </h6>
                         </div>
-                        <div class="table-responsive mailbox-messages">
-                            <table class="table table-hover table-striped">
-                                <tbody>
-                                    @foreach (var item in Model)
-                                    {
-                                        string kontrol = "check" + item.MesajID;
-                                        var mesaj = "";
-                                        if (item.Aciklama.Length > 80)
-                                        {
-                                            mesaj = item.Aciklama.Substring(0, 80).ToString() + "...";
-                                        }
-                                        else
-                                        {
-                                            mesaj = item.Aciklama.ToString();
-                                        }
-                                        <tr>
-                                            <td>
-                                                <div class="icheck-primary">
-                                                    <input type="checkbox" value="" id="kontrol">
-                                                    <label for="kontrol"></label>
-                                                </div>
-                                            </td>
-                                            <td class="mailbox-star"><a href="~/CariPanel/MesajDetay/@item.MesajID"><i class="fas fa-star text-warning"></i></a></td>
-                                            <td class="mailbox-name"><a href="~/CariPanel/MesajDetay/@item.MesajID">@item.Gonderici</a></td>
-                                            <td class="mailbox-subject">
-                                                <b>@item.Konu</b> - @mesaj
-                                            </td>
-                                            <td class="mailbox-attachment"></td>
-                                            <td class="mailbox-date">@Convert.ToDateTime(item.Tarih).ToString("dd/MM/yyyy")</td>
-                                        </tr>
-                                    }
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                    <div class="card-footer p-0">
-                        <div class="mailbox-controls">
-                            <button type="button" class="btn btn-default btn-sm checkbox-toggle">
-                                <i class="far fa-square"></i>
-                            </button>
-                            <div class="btn-group">
-                                <button type="button" class="btn btn-default btn-sm"><i class="far fa-trash-alt"></i></button>
-                                <button type="button" class="btn btn-default btn-sm"><i class="fas fa-reply"></i></button>
-                                <button type="button" class="btn btn-default btn-sm"><i class="fas fa-share"></i></button>
-                            </div>
-                            <button type="button" class="btn btn-default btn-sm"><i class="fas fa-sync-alt"></i></button>
-                            <div class="float-right">
-                                1-50/200
-                                <div class="btn-group">
-                                    <button type="button" class="btn btn-default btn-sm"><i class="fas fa-chevron-left"></i></button>
-                                    <button type="button" class="btn btn-default btn-sm"><i class="fas fa-chevron-right"></i></button>
-                                </div>
-                            </div>
+                        <div class="mailbox-read-message">
+                            <p>@Model.Aciklama</p>
                         </div>
                     </div>
                 </div>
@@ -226,3 +158,4 @@
     <script src="~/MvcOnlineTicariOtomasyon/AdminLTE-3.0.4/dist/js/demo.js"></script>
 </body>
 </html>
+

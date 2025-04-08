@@ -2982,11 +2982,16 @@
     <Content Include="Views\Kargo\KargoDetay.cshtml" />
     <Content Include="Views\QR\Index.cshtml" />
     <Content Include="Views\CariPanel\GelenKutusu.cshtml" />
+    <Content Include="Views\CariPanel\YeniMesaj.cshtml" />
+    <Content Include="Views\CariPanel\GidenKutusu.cshtml" />
+    <Content Include="Views\CariPanel\OnemliKutusu.cshtml" />
+    <Content Include="Views\CariPanel\TanitimKutusu.cshtml" />
+    <Content Include="Views\CariPanel\SosyalKutusu.cshtml" />
+    <Content Include="Views\CariPanel\MesajDetay.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Images\" />
-    <Folder Include="Views\Mesaj\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.rtl.min.css.map" />

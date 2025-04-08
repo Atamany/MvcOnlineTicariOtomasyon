@@ -27,12 +27,87 @@ namespace MvcOnlineTicariOtomasyon.Controllers
         }
         public ActionResult GelenKutusu()
         {
-            var mesajlar = db.Mesajlars.ToList();
+            var mail = (string)Session["CariMail"];
+            var mesajlar = db.Mesajlars.Where(x => x.Alici == mail || x.Alici == "Tanıtım").OrderByDescending(x => x.Tarih).ToList();
+            ViewBag.GelenSayisi = db.Mesajlars.Count(x => x.Alici == mail || x.Alici == "Tanıtım").ToString();
+            ViewBag.GidenSayisi = db.Mesajlars.Count(x => x.Gonderici == mail).ToString();
+            ViewBag.OnemliSayisi = db.Mesajlars.Count(x => x.Alici == mail && x.Gonderici == "Admin").ToString();
+            ViewBag.TanitimSayisi = db.Mesajlars.Count(x => x.Alici == "Tanıtım").ToString();
+            ViewBag.SosyalSayisi = db.Mesajlars.Count(x => x.Alici == mail && x.Gonderici != "Admin").ToString();
             return View(mesajlar);
+        }
+        public ActionResult GidenKutusu()
+        {
+            var mail = (string)Session["CariMail"];
+            var mesajlar = db.Mesajlars.Where(x => x.Gonderici == mail).OrderByDescending(x => x.Tarih).ToList();
+            ViewBag.GelenSayisi = db.Mesajlars.Count(x => x.Alici == mail || x.Alici == "Tanıtım").ToString();
+            ViewBag.GidenSayisi = db.Mesajlars.Count(x => x.Gonderici == mail).ToString();
+            ViewBag.OnemliSayisi = db.Mesajlars.Count(x => x.Alici == mail && x.Gonderici == "Admin").ToString();
+            ViewBag.TanitimSayisi = db.Mesajlars.Count(x => x.Alici == "Tanıtım").ToString();
+            ViewBag.SosyalSayisi = db.Mesajlars.Count(x => x.Alici == mail && x.Gonderici != "Admin").ToString();
+            return View(mesajlar);
+        }
+        public ActionResult OnemliKutusu()
+        {
+            var mail = (string)Session["CariMail"];
+            var mesajlar = db.Mesajlars.Where(x => x.Alici == mail && x.Gonderici == "Admin").OrderByDescending(x => x.Tarih).ToList();
+            ViewBag.GelenSayisi = db.Mesajlars.Count(x => x.Alici == mail || x.Alici == "Tanıtım").ToString();
+            ViewBag.GidenSayisi = db.Mesajlars.Count(x => x.Gonderici == mail).ToString();
+            ViewBag.OnemliSayisi = db.Mesajlars.Count(x => x.Alici == mail && x.Gonderici == "Admin").ToString();
+            ViewBag.TanitimSayisi = db.Mesajlars.Count(x => x.Alici == "Tanıtım").ToString();
+            ViewBag.SosyalSayisi = db.Mesajlars.Count(x => x.Alici == mail && x.Gonderici != "Admin").ToString();
+            return View(mesajlar);
+        }
+        public ActionResult TanitimKutusu()
+        {
+            var mail = (string)Session["CariMail"];
+            var mesajlar = db.Mesajlars.Where(x => x.Alici == "Tanıtım").OrderByDescending(x => x.Tarih).ToList();
+            ViewBag.GelenSayisi = db.Mesajlars.Count(x => x.Alici == mail || x.Alici == "Tanıtım").ToString();
+            ViewBag.GidenSayisi = db.Mesajlars.Count(x => x.Gonderici == mail).ToString();
+            ViewBag.OnemliSayisi = db.Mesajlars.Count(x => x.Alici == mail && x.Gonderici == "Admin").ToString();
+            ViewBag.TanitimSayisi = db.Mesajlars.Count(x => x.Alici == "Tanıtım").ToString();
+            ViewBag.SosyalSayisi = db.Mesajlars.Count(x => x.Alici == mail && x.Gonderici != "Admin").ToString();
+            return View(mesajlar);
+        }
+        public ActionResult SosyalKutusu()
+        {
+            var mail = (string)Session["CariMail"];
+            var mesajlar = db.Mesajlars.Where(x => x.Alici == mail && x.Gonderici != "Admin").OrderByDescending(x => x.Tarih).ToList();
+            ViewBag.GelenSayisi = db.Mesajlars.Count(x => x.Alici == mail || x.Alici == "Tanıtım").ToString();
+            ViewBag.GidenSayisi = db.Mesajlars.Count(x => x.Gonderici == mail).ToString();
+            ViewBag.OnemliSayisi = db.Mesajlars.Count(x => x.Alici == mail && x.Gonderici == "Admin").ToString();
+            ViewBag.TanitimSayisi = db.Mesajlars.Count(x => x.Alici == "Tanıtım").ToString();
+            ViewBag.SosyalSayisi = db.Mesajlars.Count(x => x.Alici == mail && x.Gonderici != "Admin").ToString();
+            return View(mesajlar);
+        }
+        public ActionResult MesajDetay(int id)
+        {
+
+            var mail = (string)Session["CariMail"];
+            var mesaj = db.Mesajlars.Find(id);
+            ViewBag.GelenSayisi = db.Mesajlars.Count(x => x.Alici == mail || x.Alici == "Tanıtım").ToString();
+            ViewBag.GidenSayisi = db.Mesajlars.Count(x => x.Gonderici == mail).ToString();
+            ViewBag.OnemliSayisi = db.Mesajlars.Count(x => x.Alici == mail && x.Gonderici == "Admin").ToString();
+            ViewBag.TanitimSayisi = db.Mesajlars.Count(x => x.Alici == "Tanıtım").ToString();
+            ViewBag.SosyalSayisi = db.Mesajlars.Count(x => x.Alici == mail && x.Gonderici != "Admin").ToString();
+            if (mesaj.Alici == mail || mesaj.Alici == "Tanıtım" || mesaj.Gonderici == mail)
+            {
+                return View(mesaj);
+            }
+            else
+            {
+                return RedirectToAction("GelenKutusu");
+            }
         }
         [HttpGet]
         public ActionResult YeniMesaj()
         {
+            var mail = (string)Session["CariMail"];
+            ViewBag.GelenSayisi = db.Mesajlars.Count(x => x.Alici == mail || x.Alici == "Tanıtım").ToString();
+            ViewBag.GidenSayisi = db.Mesajlars.Count(x => x.Gonderici == mail).ToString();
+            ViewBag.OnemliSayisi = db.Mesajlars.Count(x => x.Alici == mail && x.Gonderici == "Admin").ToString();
+            ViewBag.TanitimSayisi = db.Mesajlars.Count(x => x.Alici == "Tanıtım").ToString();
+            ViewBag.SosyalSayisi = db.Mesajlars.Count(x => x.Alici == mail && x.Gonderici != "Admin").ToString();
             return View();
         }
         [HttpPost]
@@ -40,10 +115,17 @@ namespace MvcOnlineTicariOtomasyon.Controllers
         {
             var Gonderen = (string)Session["CariMail"];
             m.Gonderici = Gonderen;
-            m.Tarih = DateTime.Parse(DateTime.Now.ToShortDateString());
-            db.Mesajlars.Add(m);
-            db.SaveChanges();
-            return RedirectToAction("GelenKutusu");
+            m.Tarih = DateTime.Parse(DateTime.Now.ToString());
+            if (db.Carilers.Any(x => x.CariMail == m.Alici) == true || m.Alici == "Admin")
+            {
+                db.Mesajlars.Add(m);
+                db.SaveChanges();
+                return RedirectToAction("GidenKutusu");
+            }
+            else
+            {
+                return RedirectToAction("YeniMesaj");
+            }
         }
     }
 }

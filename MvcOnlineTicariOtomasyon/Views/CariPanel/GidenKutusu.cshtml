@@ -1,7 +1,7 @@
 ﻿@using MvcOnlineTicariOtomasyon.Models.Siniflar
 @model List<Mesajlar>
 @{
-    ViewBag.Title = "GelenKutusu";
+    ViewBag.Title = "GidenKutusu";
     Layout = "~/Views/Shared/_CariLayout.cshtml";
 }
 <!DOCTYPE html>
@@ -95,7 +95,7 @@
             <div class="col-md-9">
                 <div class="card card-primary card-outline">
                     <div class="card-header">
-                        <h3 class="card-title">Gelen Kutusu</h3>
+                        <h3 class="card-title">Giden Kutusu</h3>
                         <div class="card-tools">
                             <div class="input-group input-group-sm">
                                 <input type="text" class="form-control" placeholder="Mesaj Ara">
@@ -149,7 +149,7 @@
                                                 </div>
                                             </td>
                                             <td class="mailbox-star"><a href="~/CariPanel/MesajDetay/@item.MesajID"><i class="fas fa-star text-warning"></i></a></td>
-                                            <td class="mailbox-name"><a href="~/CariPanel/MesajDetay/@item.MesajID">@item.Gonderici</a></td>
+                                            <td class="mailbox-name"><a href="~/CariPanel/MesajDetay/@item.MesajID">@item.Alici</a></td>
                                             <td class="mailbox-subject">
                                                 <b>@item.Konu</b> - @mesaj
                                             </td>
@@ -226,3 +226,4 @@
     <script src="~/MvcOnlineTicariOtomasyon/AdminLTE-3.0.4/dist/js/demo.js"></script>
 </body>
 </html>
+
