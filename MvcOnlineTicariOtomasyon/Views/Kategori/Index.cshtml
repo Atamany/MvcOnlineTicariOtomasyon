@@ -22,7 +22,8 @@
         </tr>
     }
 </table>
-@Html.PagedListPager((IPagedList)Model, sayfa => Url.Action("Index", new { sayfa }))
+@Html.PagedListPager((IPagedList)Model, sayfa => Url.Action("Index", new { sayfa }),
+    new PagedListRenderOptions { LiElementClasses=new List<String> { "page-link"} })
 <a href="/Kategori/KategoriEkle" class="btn btn-primary">Kategori Ekle</a>
 <a href="/Kategori/KategoriListesi" class="btn btn-warning"> PDF ~ Excel</a>
 

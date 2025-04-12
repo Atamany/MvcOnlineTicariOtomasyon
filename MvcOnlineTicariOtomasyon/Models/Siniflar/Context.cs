@@ -13,7 +13,6 @@ namespace MvcOnlineTicariOtomasyon.Models.Siniflar
         public DbSet<Departman> Departmans { get; set; }
         public DbSet<Fatura> Faturas { get; set; }
         public DbSet<FaturaKalem> FaturaKalems { get; set; }
-        public DbSet<Gider> Giders { get; set; }
         public DbSet<Kategori> Kategoris { get; set; }
         public DbSet<Personel> Personels { get; set; }
         public DbSet<SatisHareket> SatisHarekets { get; set; }
