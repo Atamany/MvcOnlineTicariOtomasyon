@@ -2988,6 +2988,9 @@
     <Content Include="Views\CariPanel\TanitimKutusu.cshtml" />
     <Content Include="Views\CariPanel\SosyalKutusu.cshtml" />
     <Content Include="Views\CariPanel\MesajDetay.cshtml" />
+    <Content Include="Views\CariPanel\KargoTakip.cshtml" />
+    <Content Include="Views\CariPanel\KargoDetay.cshtml" />
+    <Content Include="Views\Kargo\TakipEkle.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

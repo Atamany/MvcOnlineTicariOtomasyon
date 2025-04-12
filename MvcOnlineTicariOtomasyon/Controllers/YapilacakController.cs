@@ -7,6 +7,7 @@ using MvcOnlineTicariOtomasyon.Models.Siniflar;
 
 namespace MvcOnlineTicariOtomasyon.Controllers
 {
+    [Authorize]
     public class YapilacakController : Controller
     {
         Context db = new Context();

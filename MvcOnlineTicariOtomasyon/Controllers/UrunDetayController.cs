@@ -8,6 +8,7 @@ using MvcOnlineTicariOtomasyon.Models.Siniflar;
 
 namespace MvcOnlineTicariOtomasyon.Controllers
 {
+    [Authorize]
     public class UrunDetayController : Controller
     {
         Context db = new Context();

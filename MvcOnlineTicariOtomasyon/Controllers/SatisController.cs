@@ -7,6 +7,7 @@ using MvcOnlineTicariOtomasyon.Models.Siniflar;
 
 namespace MvcOnlineTicariOtomasyon.Controllers
 {
+    [Authorize]
     public class SatisController : Controller
     {
         Context db = new Context();
@@ -44,7 +45,7 @@ namespace MvcOnlineTicariOtomasyon.Controllers
         [HttpPost]
         public ActionResult YeniSatis(SatisHareket s)
         {
-            s.Tarih = DateTime.Parse(DateTime.Now.ToShortDateString());
+            s.Tarih = DateTime.Parse(DateTime.Now.ToString());
             db.SatisHarekets.Add(s);
             var urun = db.Uruns.FirstOrDefault(u => u.UrunID == s.UrunID);
             if (urun != null)

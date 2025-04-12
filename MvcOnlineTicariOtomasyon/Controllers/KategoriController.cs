@@ -9,6 +9,7 @@ using MvcOnlineTicariOtomasyon.Models.Siniflar;
 
 namespace MvcOnlineTicariOtomasyon.Controllers
 {
+    [Authorize]
     public class KategoriController : Controller
     {
         Context db = new Context();

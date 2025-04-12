@@ -7,6 +7,7 @@ using MvcOnlineTicariOtomasyon.Models.Siniflar;
 
 namespace MvcOnlineTicariOtomasyon.Controllers
 {
+    [Authorize]
     public class KargoController : Controller
     {
         Context db = new Context();
@@ -53,9 +54,23 @@ namespace MvcOnlineTicariOtomasyon.Controllers
         }
         public ActionResult KargoDetay(string id)
         {
-            var degerler = db.KargoTakips.Where(x => x.TakipKodu == id).ToList();
+            var degerler = db.KargoTakips.Where(x => x.TakipKodu == id).OrderByDescending(x=>x.TarihZaman).ToList();
             ViewBag.TakipKod = id;
             return View(degerler);
+        }
+        [HttpGet]
+        public ActionResult TakipEkle(string id)
+        {
+            ViewBag.TakipKod = id;
+            return View();
+        }
+        [HttpPost]
+        public ActionResult TakipEkle(KargoTakip k)
+        {
+            k.TarihZaman = DateTime.Parse(DateTime.Now.ToString());
+            db.KargoTakips.Add(k);
+            db.SaveChanges();
+            return RedirectToAction("KargoDetay", new { id = k.TakipKodu });
         }
     }
 }

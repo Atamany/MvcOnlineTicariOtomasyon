@@ -7,6 +7,7 @@ using MvcOnlineTicariOtomasyon.Models.Siniflar;
 
 namespace MvcOnlineTicariOtomasyon.Controllers
 {
+    [Authorize]
     public class UrunController : Controller
     {
         Context db = new Context();
@@ -96,7 +97,7 @@ namespace MvcOnlineTicariOtomasyon.Controllers
         [HttpPost]
         public ActionResult SatisYap(SatisHareket p)
         {
-            p.Tarih = DateTime.Parse(DateTime.Now.ToShortDateString());
+            p.Tarih = DateTime.Parse(DateTime.Now.ToString());
             p.ToplamTutar = Convert.ToDecimal(p.Adet) * Convert.ToDecimal(p.Fiyat);
             db.SatisHarekets.Add(p);
             db.SaveChanges();

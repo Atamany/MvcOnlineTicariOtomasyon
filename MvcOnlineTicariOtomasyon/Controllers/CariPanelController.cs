@@ -7,10 +7,10 @@ using System.Web.Mvc;
 
 namespace MvcOnlineTicariOtomasyon.Controllers
 {
+    [Authorize]
     public class CariPanelController : Controller
     {
         Context db = new Context();
-        [Authorize]
         public ActionResult Index()
         {
             var mail = (string)Session["CariMail"];
@@ -24,6 +24,28 @@ namespace MvcOnlineTicariOtomasyon.Controllers
             var id = db.Carilers.Where(x => x.CariMail == mail.ToString()).Select(y => y.CariID).FirstOrDefault();
             var degerler = db.SatisHarekets.Where(x => x.CariID == id).ToList();
             return View(degerler);
+        }
+        public ActionResult KargoTakip()
+        {
+            var mail = (string)Session["CariMail"];
+            var cari = db.Carilers.Where(x => x.CariMail == mail.ToString()).Select(y => y.CariID).FirstOrDefault();
+            var degerler = db.KargoDetays.Where(x => x.CariID == cari).OrderByDescending(x => x.Tarih).ToList();
+            return View(degerler);
+        }
+        public ActionResult KargoDetay(string id)
+        {
+            var mail = (string)Session["CariMail"];
+            var cari = db.Carilers.Where(x => x.CariMail == mail.ToString()).Select(y => y.CariID).FirstOrDefault();
+            var degerler = db.KargoTakips.Where(x => x.TakipKodu == id).OrderByDescending(x=>x.TarihZaman).ToList();
+            var kargo = db.KargoDetays.Where(x => x.TakipKodu == id).FirstOrDefault();
+            if (kargo.CariID == cari)
+            {
+                return View(degerler);
+            }
+            else
+            {
+                return RedirectToAction("KargoTakip");
+            }
         }
         public ActionResult GelenKutusu()
         {
