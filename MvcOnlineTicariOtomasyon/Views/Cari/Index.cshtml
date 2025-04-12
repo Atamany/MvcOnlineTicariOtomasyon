@@ -14,7 +14,6 @@
             <th>Şehir</th>
             <th>Mail</th>
             <th>Sil</th>
-            <th>Güncelle</th>
             <th>Detaylar</th>
         </tr>
     </thead>
@@ -27,13 +26,11 @@
             <td>@x.CariSehir</td>
             <td>@x.CariMail</td>
             <td><a href="/Cari/CariSil/@x.CariID" class="btn btn-outline-danger">Sil</a></td>
-            <td><a href="/Cari/CariGetir/@x.CariID" class="btn btn-outline-warning">Güncelle</a></td>
             <td><a href="/Cari/MusteriSatis/@x.CariID" class="btn btn-outline-info">Hesap Geçmişi</a></td>
         </tr>
     }
 </table>
-<a href="/Cari/YeniCari" class="btn btn-info">Cari Ekle</a>
-<a href="/Cari/CariListesi" class="btn btn-warning"> PDF ~ Excel</a>
+<a href="/Cari/CariListesi" class="btn btn-info"> PDF ~ Excel</a>
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 
 <link href="https://cdn.datatables.net/1.10.15/css/dataTables.bootstrap.min.css" rel="stylesheet" />

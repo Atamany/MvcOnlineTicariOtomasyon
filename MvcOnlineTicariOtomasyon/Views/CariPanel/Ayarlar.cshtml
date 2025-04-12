@@ -1,0 +1,63 @@
+﻿@model MvcOnlineTicariOtomasyon.Models.Siniflar.Cariler
+@using (Html.BeginForm("ProfilGuncelle", "CariPanel", FormMethod.Post))
+{
+    <form class="form-horizontal">
+        <div class="form-group row">
+            <label for="CariAd" class="col-sm-2 col-form-label">Ad</label>
+            <div class="col-sm-10">
+                @Html.TextBoxFor(x => x.CariAd, new { @class = "form-control" })
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="CariSoyad" class="col-sm-2 col-form-label">Soyad</label>
+            <div class="col-sm-10">
+                @Html.TextBoxFor(x => x.CariSoyad, new { @class = "form-control" })
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="CariSehir" class="col-sm-2 col-form-label">Şehir</label>
+            <div class="col-sm-10">
+                @Html.TextBoxFor(x => x.CariSehir, new { @class = "form-control" })
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="CariMail" class="col-sm-2 col-form-label">E-Posta</label>
+            <div class="col-sm-10">
+                @Html.TextBoxFor(x => x.CariMail, new { @class = "form-control" })
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="CariResim" class="col-sm-2 col-form-label">Resim (URL)</label>
+            <div class="col-sm-10">
+                @Html.TextBoxFor(x => x.CariResim, new { @class = "form-control" })
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="password1" class="col-sm-2 col-form-label">Şifre</label>
+            <div class="col-sm-10">
+                <input type="password" class="form-control" name="password1" value="@Model.CariSifre" id="password1" placeholder="Şifre">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="password2" class="col-sm-2 col-form-label">Şifre (Tekrar)</label>
+            <div class="col-sm-10">
+                <input type="password" class="form-control" name="password2" value="@Model.CariSifre" id="password2" placeholder="Şifre (Tekrar)">
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="offset-sm-2 col-sm-10">
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox"> <a href="#">Hüküm ve Koşullar</a>ı, Okudum ve Kabul Ediyorum!
+                    </label>
+                </div>
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="offset-sm-2 col-sm-10">
+                <button type="submit" class="btn btn-danger">Güncelle</button>
+            </div>
+        </div>
+    </form>
+}
+

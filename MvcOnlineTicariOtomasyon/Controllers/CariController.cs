@@ -13,46 +13,13 @@ namespace MvcOnlineTicariOtomasyon.Controllers
         Context db = new Context();
         public ActionResult Index()
         {
-            var degerler = db.Carilers.Where(x=>x.Durum==true).ToList();
+            var degerler = db.Carilers.Where(x => x.Durum == true).ToList();
             return View(degerler);
-        }
-        [HttpGet]
-        public ActionResult YeniCari()
-        {
-            return View();
-        }
-        [HttpPost]
-        public ActionResult YeniCari(Cariler p)
-        {
-            p.Durum = true;
-            db.Carilers.Add(p);
-            db.SaveChanges();
-            return RedirectToAction("Index");
         }
         public ActionResult CariSil(int id)
         {
             var cari = db.Carilers.Find(id);
             cari.Durum = false;
-            db.SaveChanges();
-            return RedirectToAction("Index");
-        }
-        public ActionResult CariGetir(int id)
-        {
-            var cari = db.Carilers.Find(id);
-            return View("CariGetir", cari);
-        }
-        public ActionResult CariGuncelle(Cariler p)
-        {
-            if(!ModelState.IsValid)
-            {
-                return View("CariGetir");
-            }
-            var cari = db.Carilers.Find(p.CariID);
-            cari.CariAd = p.CariAd;
-            cari.CariSoyad = p.CariSoyad;
-            cari.CariSehir = p.CariSehir;
-            cari.CariMail = p.CariMail;
-            cari.CariSifre = p.CariSifre;
             db.SaveChanges();
             return RedirectToAction("Index");
         }

@@ -1,28 +1,130 @@
-﻿@model MvcOnlineTicariOtomasyon.Models.Siniflar.Cariler
+﻿@using MvcOnlineTicariOtomasyon.Models.Siniflar
+@model List<Mesajlar>
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_CariLayout.cshtml";
 }
-
-<h1 class="mt-4">MVC5 Online Ticari Otomasyon - Cari Bilgi Paneli</h1>
-@using (Html.BeginForm("Index2", "CariPanel", FormMethod.Post))
-{
-    <table class="table table-hover">
-        <tr>
-            <td><label>Mail Adresi: @HttpContext.Current.User.Identity.Name</label></td>
-        </tr>
-        <tr>
-            <td>@Html.TextBoxFor(x => x.CariAd, new { @class = "form-control" })</td>
-        </tr>
-        <tr>
-            <td>@Html.TextBoxFor(x => x.CariSoyad, new { @class = "form-control" })</td>
-        </tr>
-        <tr>
-            <td>@Html.TextBoxFor(x => x.CariSehir, new { @class = "form-control" })</td>
-        </tr>
-        <tr>
-            <td>@Html.TextBoxFor(x => x.CariSifre, new { @class = "form-control" })</td>
-        </tr>
-    </table>
-    <button type="submit" class="btn btn-warning">Güncelle</button>
-}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>AdminLTE 3 | User Profile</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="~/MvcOnlineTicariOtomasyon/AdminLTE-3.0.4/plugins/fontawesome-free/css/all.min.css">
+    <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <link rel="stylesheet" href="~/MvcOnlineTicariOtomasyon/AdminLTE-3.0.4/dist/css/adminlte.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+</head>
+<body class="hold-transition sidebar-mini">
+    <div class="wrapper">
+        <section class="content-header">
+            <div class="container-fluid">
+                <div class="row mb-2">
+                    <div class="col-sm-6">
+                        <h1>Profil</h1>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="content">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="card card-primary card-outline">
+                            <div class="card-body box-profile">
+                                <div class="text-center">
+                                    <img class="profile-user-img img-fluid img-circle"
+                                         src="@ViewBag.ProfilFotografi"
+                                         alt="User profile picture">
+                                </div>
+                                <h3 class="profile-username text-center">@ViewBag.Ad @ViewBag.Soyad</h3>
+                                <p class="text-muted text-center">@ViewBag.Mail</p>
+                                <ul class="list-group list-group-unbordered mb-3">
+                                    <li class="list-group-item">
+                                        <b>Sipariş Sayısı</b> <a class="float-right">@ViewBag.SiparisSayisi</a>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <b>Gönderilen Mesaj Sayısı</b> <a class="float-right">@ViewBag.GonderilenMesaj</a>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <b>Alınan Mesaj Sayısı</b> <a class="float-right">@ViewBag.AlinanMesaj</a>
+                                    </li>
+                                </ul>
+                                <a href="~/CariPanel/GelenKutusu/" class="btn btn-primary btn-block"><b>Mesajlar</b></a>
+                            </div>
+                        </div>
+                        <div class="card card-primary">
+                            <div class="card-header">
+                                <h3 class="card-title">Hakkımda</h3>
+                            </div>
+                            <div class="card-body">
+                                <strong><i class="fa fa-user"></i> Ad</strong>
+                                <p class="text-muted">@ViewBag.Ad</p>
+                                <hr />
+                                <strong><i class="fa fa-user"></i> Soyad</strong>
+                                <p class="text-muted">@ViewBag.Soyad </p>
+                                <hr>
+                                <strong><i class="far fa-envelope-open"></i> e-Posta</strong>
+                                <p class="text-muted">@ViewBag.Mail</p>
+                                <hr>
+                                <strong><i class="fas fa-map-marker-alt mr-1"></i> Şehir</strong>
+                                <p class="text-muted">@ViewBag.Sehir</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-9">
+                        <div class="card">
+                            <div class="card-header p-2">
+                                <ul class="nav nav-pills">
+                                    <li class="nav-item"><a class="nav-link active" href="#activity" data-toggle="tab">Mesajlar</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="#timeline" data-toggle="tab">Duyurular</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="#settings" data-toggle="tab">Ayarlar</a></li>
+                                </ul>
+                            </div>
+                            <div class="card-body">
+                                <div class="tab-content">
+                                    <div class="active tab-pane" id="activity">
+                                        @foreach (var x in Model)
+                                        {
+                                            <div class="post">
+                                                <div class="user-block">
+                                                    <img class="img-circle img-bordered-sm" src="https://cdn.pixabay.com/photo/2016/06/13/17/30/mail-1454732_640.png" alt="user image">
+                                                    <span class="username">
+                                                        <a href="#">@x.Gonderici</a>
+                                                        <a href="#" class="float-right btn-tool"><i class="fas fa-times"></i></a>
+                                                    </span>
+                                                    <span class="description">@x.Konu - @x.Tarih.ToShortDateString()</span>
+                                                </div>
+                                                <p>
+                                                    @x.Aciklama
+                                                </p>
+                                            </div>
+                                        }
+                                    </div>
+                                    <div class="tab-pane" id="timeline">
+                                        @Html.Action("Duyurular", "CariPanel")
+                                    </div>
+                                    <div class="tab-pane" id="settings">
+                                        @Html.Action("Ayarlar","CariPanel")
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <footer class="main-footer">
+        <div class="float-right d-none d-sm-block">
+            <b>Version</b> 3.0.4
+        </div>
+        <strong>Copyright &copy; 2014-2019 <a href="http://adminlte.io">AdminLTE.io</a>.</strong> All rights reserved.
+    </footer>
+    <script src="~/MvcOnlineTicariOtomasyon/AdminLTE-3.0.4/plugins/jquery/jquery.min.js"></script>
+    <script src="~/MvcOnlineTicariOtomasyon/AdminLTE-3.0.4/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="~/MvcOnlineTicariOtomasyon/AdminLTE-3.0.4/dist/js/adminlte.min.js"></script>
+    <script src="~/MvcOnlineTicariOtomasyon/AdminLTE-3.0.4/dist/js/demo.js"></script>
+</body>
+</html>

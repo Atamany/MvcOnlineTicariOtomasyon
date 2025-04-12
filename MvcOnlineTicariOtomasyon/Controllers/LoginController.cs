@@ -23,6 +23,7 @@ namespace MvcOnlineTicariOtomasyon.Controllers
         [HttpPost]
         public PartialViewResult Partial1(Cariler p)
         {
+            p.Durum = true;
             c.Carilers.Add(p);
             c.SaveChanges();
             return PartialView();
