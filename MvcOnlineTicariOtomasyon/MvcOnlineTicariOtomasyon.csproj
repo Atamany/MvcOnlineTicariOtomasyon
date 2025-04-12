@@ -140,6 +140,7 @@
     <Compile Include="Controllers\CariController.cs" />
     <Compile Include="Controllers\CariPanelController.cs" />
     <Compile Include="Controllers\DepartmanController.cs" />
+    <Compile Include="Controllers\ErrorController.cs" />
     <Compile Include="Controllers\FaturaController.cs" />
     <Compile Include="Controllers\GaleriController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -2990,6 +2991,7 @@
     <Content Include="Views\Kargo\TakipEkle.cshtml" />
     <Content Include="Views\CariPanel\Ayarlar.cshtml" />
     <Content Include="Views\CariPanel\Duyurular.cshtml" />
+    <Content Include="Views\Error\PageError.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
