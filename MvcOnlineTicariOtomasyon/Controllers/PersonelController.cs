@@ -12,11 +12,6 @@ namespace MvcOnlineTicariOtomasyon.Controllers
     public class PersonelController : Controller
     {
         Context db = new Context();
-        public ActionResult Index()
-        {
-            var degerler = db.Personels.ToList();
-            return View(degerler);
-        }
         [HttpGet]
         public ActionResult PersonelEkle()
         {

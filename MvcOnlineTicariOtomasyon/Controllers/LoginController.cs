@@ -28,11 +28,6 @@ namespace MvcOnlineTicariOtomasyon.Controllers
             c.SaveChanges();
             return PartialView();
         }
-        [HttpGet]
-        public ActionResult CariLogin1()
-        {
-            return View();
-        }
         [HttpPost]
         public ActionResult CariLogin1(Cariler p)
         {
@@ -48,11 +43,6 @@ namespace MvcOnlineTicariOtomasyon.Controllers
             {
                 return RedirectToAction("Index","Login");
             }
-        }
-        [HttpGet]
-        public ActionResult AdminLogin()
-        {
-            return View();
         }
         [HttpPost]
         public ActionResult AdminLogin(Admin p)

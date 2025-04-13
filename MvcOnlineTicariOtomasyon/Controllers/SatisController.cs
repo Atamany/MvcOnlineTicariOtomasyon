@@ -45,6 +45,7 @@ namespace MvcOnlineTicariOtomasyon.Controllers
         [HttpPost]
         public ActionResult YeniSatis(SatisHareket s)
         {
+            s.ToplamTutar = s.Adet * s.Fiyat;
             s.Tarih = DateTime.Parse(DateTime.Now.ToString());
             db.SatisHarekets.Add(s);
             var urun = db.Uruns.FirstOrDefault(u => u.UrunID == s.UrunID);
@@ -87,17 +88,12 @@ namespace MvcOnlineTicariOtomasyon.Controllers
             satis.Adet = s.Adet;
             satis.Fiyat = s.Fiyat;
             satis.Tarih = s.Tarih;
-            satis.ToplamTutar = s.ToplamTutar;
+            satis.ToplamTutar = s.Adet * s.Fiyat;
             satis.UrunID = s.UrunID;
             satis.CariID = s.CariID;
             satis.PersonelID = s.PersonelID;
             db.SaveChanges();
             return RedirectToAction("Index");
-        }
-        public ActionResult SatisDetay(int id)
-        {
-            var degerler = db.SatisHarekets.Where(x => x.SatisID == id).ToList();
-            return View(degerler);
         }
         public ActionResult SatisListesi()
         {

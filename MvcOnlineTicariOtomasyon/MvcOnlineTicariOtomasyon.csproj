@@ -149,11 +149,9 @@
     <Compile Include="Controllers\KategoriController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\PersonelController.cs" />
-    <Compile Include="Controllers\QRController.cs" />
     <Compile Include="Controllers\SatisController.cs" />
     <Compile Include="Controllers\UrunController.cs" />
     <Compile Include="Controllers\UrunDetayController.cs" />
-    <Compile Include="Controllers\YapilacakController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -189,6 +187,10 @@
     <Compile Include="Migrations\202504011919028_kargotest.Designer.cs">
       <DependentUpon>202504011919028_kargotest.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202504131609310_mig8.cs" />
+    <Compile Include="Migrations\202504131609310_mig8.Designer.cs">
+      <DependentUpon>202504131609310_mig8.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Siniflar\Admin.cs" />
     <Compile Include="Models\Siniflar\Cariler.cs" />
@@ -207,7 +209,6 @@
     <Compile Include="Models\Siniflar\SinifGrup3.cs" />
     <Compile Include="Models\Siniflar\SinifGrup4.cs" />
     <Compile Include="Models\Siniflar\Urun.cs" />
-    <Compile Include="Models\Siniflar\Yapilacak.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -2938,20 +2939,17 @@
     <Content Include="Views\Departman\DepartmanPersonelSatis.cshtml" />
     <Content Include="Views\Cari\Index.cshtml" />
     <Content Include="Views\Cari\MusteriSatis.cshtml" />
-    <Content Include="Views\Personel\Index.cshtml" />
     <Content Include="Views\Personel\PersonelEkle.cshtml" />
     <Content Include="Views\Personel\PersonelGetir.cshtml" />
     <Content Include="Views\Satis\Index.cshtml" />
     <Content Include="Views\Satis\YeniSatis.cshtml" />
     <Content Include="Views\Satis\SatisGetir.cshtml" />
-    <Content Include="Views\Satis\SatisDetay.cshtml" />
     <Content Include="Views\Urun\UrunListesi.cshtml" />
     <Content Include="Views\Fatura\Index.cshtml" />
     <Content Include="Views\Fatura\FaturaEkle.cshtml" />
     <Content Include="Views\Fatura\FaturaGetir.cshtml" />
     <Content Include="Views\Fatura\FaturaDetay.cshtml" />
     <Content Include="Views\Fatura\YeniKalem.cshtml" />
-    <Content Include="Views\Istatistik\Index.cshtml" />
     <Content Include="Views\Galeri\Index.cshtml" />
     <Content Include="Views\UrunDetay\Index.cshtml" />
     <Content Include="Views\Istatistik\KolayTablolar.cshtml" />
@@ -2960,7 +2958,6 @@
     <Content Include="Views\Istatistik\Partial3.cshtml" />
     <Content Include="Views\Istatistik\Partial4.cshtml" />
     <Content Include="Views\Personel\PersonelListe.cshtml" />
-    <Content Include="Views\Yapilacak\Index.cshtml" />
     <Content Include="Views\Login\Index.cshtml" />
     <Content Include="Views\Login\Partial1.cshtml" />
     <Content Include="Views\Shared\_CariLayout.cshtml" />
@@ -2978,7 +2975,6 @@
     <Content Include="Views\Kargo\KargoListesi.cshtml" />
     <Content Include="Views\Kargo\YeniKargo.cshtml" />
     <Content Include="Views\Kargo\KargoDetay.cshtml" />
-    <Content Include="Views\QR\Index.cshtml" />
     <Content Include="Views\CariPanel\GelenKutusu.cshtml" />
     <Content Include="Views\CariPanel\YeniMesaj.cshtml" />
     <Content Include="Views\CariPanel\GidenKutusu.cshtml" />
@@ -3058,6 +3054,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202504011919028_kargotest.resx">
       <DependentUpon>202504011919028_kargotest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202504131609310_mig8.resx">
+      <DependentUpon>202504131609310_mig8.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -17,7 +17,6 @@
             <th>Toplam</th>
             <th>Tarih</th>
             <th>Güncelle</th>
-            <th>Detaylar</th>
         </tr>
     </thead>
     @foreach (var k in Model)
@@ -32,7 +31,6 @@
             <td>@k.ToplamTutar</td>
             <td>@Convert.ToDateTime(k.Tarih).ToString("dd/MM/yyyy")</td>
             <td><a href="/Satis/SatisGetir/@k.SatisID" class="btn btn-outline-success">Güncelle</a></td>
-            <td><a href="/Satis/SatisDetay/@k.SatisID" class="btn btn-outline-info">Detaylar</a></td>
         </tr>
     }
 </table>

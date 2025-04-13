@@ -34,6 +34,7 @@ namespace MvcOnlineTicariOtomasyon.Controllers
             }
             return View(degerler);
         }
+        [HttpPost]
         public ActionResult ProfilGuncelle(Cariler c, string password1, string password2)
         {
             var mail = (string)Session["CariMail"];
