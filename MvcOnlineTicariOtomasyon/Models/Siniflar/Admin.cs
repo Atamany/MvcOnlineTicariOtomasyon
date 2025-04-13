@@ -17,9 +17,6 @@ namespace MvcOnlineTicariOtomasyon.Models.Siniflar
         [Column(TypeName = "Varchar")]
         [StringLength(10)]
         public string Sifre { get; set; }
-        [Column(TypeName = "Char")]
-        [StringLength(1)]
-        public string Yetki { get; set; }
         public string AdminResim { get; set; }
     }
 }

@@ -68,6 +68,7 @@ namespace MvcOnlineTicariOtomasyon.Controllers
         [HttpPost]
         public ActionResult YeniKalem(FaturaKalem faturaKalem)
         {
+            faturaKalem.Tutar = faturaKalem.Miktar * faturaKalem.BirimFiyat;
             db.FaturaKalems.Add(faturaKalem);
             var fatura = db.Faturas.FirstOrDefault(f => f.FaturaID == faturaKalem.FaturaID);
             if (fatura != null)

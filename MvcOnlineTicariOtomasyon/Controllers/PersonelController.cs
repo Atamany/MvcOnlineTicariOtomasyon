@@ -37,7 +37,7 @@ namespace MvcOnlineTicariOtomasyon.Controllers
             }
             db.Personels.Add(p);
             db.SaveChanges();
-            return RedirectToAction("Index");
+            return RedirectToAction("PersonelListe");
         }
         public ActionResult PersonelGetir(int id)
         {
@@ -67,7 +67,7 @@ namespace MvcOnlineTicariOtomasyon.Controllers
             prsnl.PersonelGorsel = p.PersonelGorsel;
             prsnl.DepartmanID = p.DepartmanID;
             db.SaveChanges();
-            return RedirectToAction("Index");
+            return RedirectToAction("PersonelListe");
         }
         public ActionResult PersonelListe()
         {
