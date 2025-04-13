@@ -1,0 +1,129 @@
+﻿@model MvcOnlineTicariOtomasyon.Models.Siniflar.Mesajlar
+@{
+    ViewBag.Title = "YeniDuyuru";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>AdminLTE 3 | Mailbox</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="~/MvcOnlineTicariOtomasyon/AdminLTE-3.0.4/plugins/fontawesome-free/css/all.min.css">
+    <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <link rel="stylesheet" href="~/MvcOnlineTicariOtomasyon/AdminLTE-3.0.4/dist/css/adminlte.min.css">
+    <link rel="stylesheet" href="~MvcOnlineTicariOtomasyon//AdminLTE-3.0.4/plugins/summernote/summernote-bs4.css">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+</head>
+<body class="hold-transition sidebar-mini">
+    <section class="content-header">
+        <div class="container-fluid">
+            <div class="row mb-2">
+                <div class="col-sm-6">
+                    <h1>Mesajlar</h1>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="content">
+        <div class="row">
+            <div class="col-md-3">
+                <a href="~/Mesaj/YeniMesaj" class="btn btn-primary btn-block mb-3">Mesaj Gönder</a>
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="card-title">Klasörler</h3>
+                        <div class="card-tools">
+                            <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                                <i class="fas fa-minus"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="card-body p-0">
+                        <ul class="nav nav-pills flex-column">
+                            <li class="nav-item active">
+                                <a href="~/Mesaj/GelenKutusu/" class="nav-link">
+                                    <i class="fas fa-inbox"></i> Gelen Kutusu
+                                    <span class="badge bg-primary float-right">@ViewBag.GelenSayisi</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="~/Mesaj/GidenKutusu/" class="nav-link">
+                                    <i class="far fa-envelope"></i> Gönderdiğim Mesajlar
+                                    <span class="badge bg-danger float-right">@ViewBag.GidenSayisi</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="card-title">Filtreler</h3>
+                        <div class="card-tools">
+                            <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                                <i class="fas fa-minus"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="card-body p-0">
+                        <ul class="nav nav-pills flex-column">
+                            <li class="nav-item">
+                                <a href="~/Mesaj/DuyuruKutusu/" class="nav-link">
+                                    <i class="far fa-circle text-danger"></i>
+                                    Duyuru
+                                    <span class="badge bg-danger float-right">@ViewBag.DuyuruSayisi</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="~/Mesaj/TanitimKutusu/" class="nav-link">
+                                    <i class="far fa-circle text-warning"></i> Tanıtım
+                                    <span class="badge bg-warning float-right">@ViewBag.TanitimSayisi</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="~/Mesaj/SosyalKutusu/" class="nav-link">
+                                    <i class="far fa-circle text-primary"></i>
+                                    Sosyal
+                                    <span class="badge bg-primary float-right">@ViewBag.SosyalSayisi</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-9">
+                <div class="card card-primary card-outline">
+                    <div class="card-header">
+                        <h3 class="card-title">Duyuru Mesajı Gönder</h3>
+                    </div>
+                    <form class="form-group" method="post">
+                        <div class="card-body">
+                            <div class="form-group">
+                                <input class="form-control" name="Konu" placeholder="Konu:">
+                            </div>
+                            <div class="form-group">
+                                <textarea id="compose-textarea" name="Aciklama" class="form-control" style="height: 300px" placeholder="Mesaj:"></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary"><i class="far fa-envelope"></i>Gönder</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script src="~/MvcOnlineTicariOtomasyon/AdminLTE-3.0.4/plugins/jquery/jquery.min.js"></script>
+    <script src="~/MvcOnlineTicariOtomasyon/AdminLTE-3.0.4/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="~/MvcOnlineTicariOtomasyon/AdminLTE-3.0.4/dist/js/adminlte.min.js"></script>
+    <script src="~/MvcOnlineTicariOtomasyon/AdminLTE-3.0.4/plugins/summernote/summernote-bs4.min.js"></script>
+    <script src="~/MvcOnlineTicariOtomasyon/AdminLTE-3.0.4/dist/js/demo.js"></script>
+    <script>
+        $(function () {
+            //Add text editor
+            $('#compose-textarea').summernote()
+        })
+    </script>
+</body>
+</html>
+
+

@@ -20,5 +20,6 @@ namespace MvcOnlineTicariOtomasyon.Models.Siniflar
         [Column(TypeName = "Char")]
         [StringLength(1)]
         public string Yetki { get; set; }
+        public string AdminResim { get; set; }
     }
 }

@@ -152,7 +152,7 @@ namespace MvcOnlineTicariOtomasyon.Controllers
             ViewBag.OnemliSayisi = db.Mesajlars.Count(x => x.Alici == "Duyuru" || (x.Alici == mail && x.Gonderici == "Admin")).ToString();
             ViewBag.TanitimSayisi = db.Mesajlars.Count(x => x.Alici == "Tanıtım").ToString();
             ViewBag.SosyalSayisi = db.Mesajlars.Count(x => x.Alici == mail && x.Gonderici != "Admin").ToString();
-            if (mesaj.Alici == mail || mesaj.Alici == "Tanıtım" || mesaj.Gonderici == mail)
+            if (mesaj.Alici == mail || mesaj.Alici == "Tanıtım" || mesaj.Alici == "Duyuru" || mesaj.Gonderici == mail)
             {
                 return View(mesaj);
             }

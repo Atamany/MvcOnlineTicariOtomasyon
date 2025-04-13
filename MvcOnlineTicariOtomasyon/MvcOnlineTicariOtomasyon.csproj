@@ -143,11 +143,13 @@
     <Compile Include="Controllers\ErrorController.cs" />
     <Compile Include="Controllers\FaturaController.cs" />
     <Compile Include="Controllers\GaleriController.cs" />
+    <Compile Include="Controllers\HesapController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\IstatistikController.cs" />
     <Compile Include="Controllers\KargoController.cs" />
     <Compile Include="Controllers\KategoriController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\MesajController.cs" />
     <Compile Include="Controllers\PersonelController.cs" />
     <Compile Include="Controllers\SatisController.cs" />
     <Compile Include="Controllers\UrunController.cs" />
@@ -2988,10 +2990,23 @@
     <Content Include="Views\CariPanel\Ayarlar.cshtml" />
     <Content Include="Views\CariPanel\Duyurular.cshtml" />
     <Content Include="Views\Error\PageError.cshtml" />
+    <Content Include="Views\Mesaj\GelenKutusu.cshtml" />
+    <Content Include="Views\Mesaj\GidenKutusu.cshtml" />
+    <Content Include="Views\Mesaj\DuyuruKutusu.cshtml" />
+    <Content Include="Views\Mesaj\TanitimKutusu.cshtml" />
+    <Content Include="Views\Mesaj\SosyalKutusu.cshtml" />
+    <Content Include="Views\Mesaj\MesajDetay.cshtml" />
+    <Content Include="Views\Mesaj\YeniMesaj.cshtml" />
+    <Content Include="Views\Mesaj\YeniDuyuru.cshtml" />
+    <Content Include="Views\Mesaj\YeniTanitim.cshtml" />
+    <Content Include="Views\Hesap\Index.cshtml" />
+    <Content Include="Views\Hesap\Duyurular.cshtml" />
+    <Content Include="Views\Hesap\Ayarlar.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Images\" />
+    <Folder Include="Views\Mesajlar\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.rtl.min.css.map" />
